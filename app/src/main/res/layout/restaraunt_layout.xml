@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="8dp"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/location_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/image"
+            tools:text="Location Name" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/location_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_alignLeft="@id/name"
+            android:autoLink="map"
+            tools:text="Location address" />
+
+        <TextView
+            android:id="@+id/phone"
+            style="@style/location_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/address"
+            android:layout_alignLeft="@id/name"
+            android:autoLink="phone"
+            tools:text="905.000.0000" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
