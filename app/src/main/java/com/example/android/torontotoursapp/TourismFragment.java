@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -36,8 +39,15 @@ public class TourismFragment extends Fragment {
         //create list of tourist attractions in toronto
         ArrayList<Toronto> tourismList = new ArrayList<>();
 
-        tourismList.add(canoe_restaurant, "CN Tower", "290 Bremner Blvd", "(416) 601-4707", "https://www.cntower.ca/intro.html", 4.6);
-        tourismList.add(canoe_restaurant, "CN Tower", "290 Bremner Blvd", "(416) 601-4707", "https://www.cntower.ca/intro.html", 4.6);
+        tourismList.add(new Toronto(canoe_restaurant, "CN Tower", "290 Bremner Blvd, Toronto, ON M5V 3L9", "(416) 601-4707", "www.cntower.ca", 4.6));
+        tourismList.add(new Toronto(canoe_restaurant, "Royal Ontario Museum", "100 Queens Park, Toronto, ON M5S 2C6", "(416) 586-8000", "www.rom.on.ca", 4.7));
+        tourismList.add(new Toronto(canoe_restaurant, "Casa Loma", "1 Austin Terrace, Toronto, ON M5R 1X8", "(416) 923-1171", "www.casaloma.ca", 4.5));
+        tourismList.add(new Toronto(canoe_restaurant, "Ripley's Aquarium", "288 Bremner Blvd, Toronto, ON M5V 3L9", "(647) 351-3474", "www.ripleyaquariums.com", 4.6));
+        tourismList.add(new Toronto(canoe_restaurant, "Canada's Wonderland", "1 Canada's Wonderland Drive, Vaughan, ON L6A 1S6", "(905) 832-8131", "www.canadaswonderland.com", 4.5));
+
+        TourismAdapter tourismAdapter = new TourismAdapter(getActivity(), tourismList);
+        ListView tourismListView = rootView.findViewById(R.id.tourism_list_view);
+        tourismListView.setAdapter(tourismAdapter);
 
         return rootView;
 

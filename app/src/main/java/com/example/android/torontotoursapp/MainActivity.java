@@ -18,21 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
         // get fragment manager
         FragmentManager fm = getSupportFragmentManager();
-
-        // add
+        // add fragment
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.frame_main, new RestaurantFragment(), null);
+
+        //Only run one at a time
+        // restaurant fragment
+        // ft.add(R.id.frame_main, new RestaurantFragment(), null);
+        // tourism fragment
+        ft.add(R.id.frame_main, new TourismFragment(), null);
+
         ft.commit();
 
-        /*FragmentManager fragmentManager = (FragmentManager) getSupportFragmentManager();
-
-        RestaurantFragment restaurantFragment = (RestaurantFragment) fragmentManager.findFragmentById(R.id.frame_main);
-
-        fragmentManager.beginTransaction()
-                .replace(R.id.frame_main, restaurantFragment, null)
-                .setReorderingAllowed(true)
-                .addToBackStack(null)
-                .commit();
-        */
     }
 }
