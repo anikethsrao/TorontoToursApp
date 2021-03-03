@@ -5,22 +5,25 @@ package com.example.android.torontotoursapp;
  */
 public class Toronto {
 
+    private int imageId;
     private String name;
     private String address;
     private String phoneNumber;
     private String website;
     private String dates;
-    private long rating;
+    private double rating;
 
     /**
      * Constructor for restaurant objects
      *
+     * @param imageId     Location Image
      * @param name        Location Name
      * @param address     Location Address
      * @param phoneNumber Location Phone Number
      * @param rating      Location rating
      */
-    public Toronto(String name, String address, String phoneNumber, long rating) {
+    public Toronto(int imageId, String name, String address, String phoneNumber, double rating) {
+        this.imageId = imageId;
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -30,13 +33,15 @@ public class Toronto {
     /**
      * Constructor for Tourist attractions
      *
+     * @param imageId     Location Image
      * @param name        Location Name
      * @param address     Location Address
      * @param phoneNumber Location Phone Number
      * @param website     Location website
      * @param rating      Location rating
      */
-    public Toronto(String name, String address, String phoneNumber, String website, long rating) {
+    public Toronto(int imageId, String name, String address, String phoneNumber, String website, double rating) {
+        this.imageId = imageId;
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -47,6 +52,7 @@ public class Toronto {
     /**
      * Constructor for Events occurring in Toronto
      *
+     * @param imageId     Location Image
      * @param name        Location Name
      * @param address     Location Address
      * @param phoneNumber Location Phone Number
@@ -54,13 +60,18 @@ public class Toronto {
      * @param dates       Location dates
      * @param rating      Location rating
      */
-    public Toronto(String name, String address, String phoneNumber, String website, String dates, long rating) {
+    public Toronto(int imageId, String name, String address, String phoneNumber, String website, String dates, double rating) {
+        this.imageId = imageId;
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.website = website;
         this.dates = dates;
         this.rating = rating;
+    }
+
+    public int getImageId() {
+        return imageId;
     }
 
     public String getName() {
@@ -83,7 +94,7 @@ public class Toronto {
         return website;
     }
 
-    public long getRating() {
+    public double getRating() {
         return rating;
     }
 }
