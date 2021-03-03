@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +30,7 @@ public class RestaurantFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_restaurant, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_restaurant, container, false);
 
         ArrayList<Toronto> restaurantList = new ArrayList<>();
 
@@ -43,10 +42,10 @@ public class RestaurantFragment extends Fragment {
         restaurantList.add(new Toronto(R.drawable.canoe_restaurant, "Ruby Watchco", "730 Queen St E, Toronto, ON M4M 1H2", "(416) 465-0100", 4.6));
 
         RestaurantAdapter adapterView = new RestaurantAdapter(getActivity(), restaurantList);
-        ListView restaurantListView = container.findViewById(R.id.restaurants_list);
+        ListView restaurantListView = rootView.findViewById(R.id.restaurants_list_view);
         restaurantListView.setAdapter(adapterView);
 
-        return view;
+        return rootView;
 
     }
 }

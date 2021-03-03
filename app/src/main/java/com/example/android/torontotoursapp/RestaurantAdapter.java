@@ -18,7 +18,7 @@ import java.util.List;
 public class RestaurantAdapter extends ArrayAdapter<Toronto> {
 
     public RestaurantAdapter(Activity context, ArrayList<Toronto> toronto) {
-        super(context, 0, toronto);
+        super(context, 0, (List<Toronto>) toronto);
     }
 
     /**
@@ -41,12 +41,15 @@ public class RestaurantAdapter extends ArrayAdapter<Toronto> {
         ImageView locationImage = listView.findViewById(R.id.image);
         locationImage.setImageResource(currentItem.getImageId());
 
+        //initialize text view for name of the location
         TextView locationName = listView.findViewById(R.id.name);
         locationName.setText(currentItem.getName());
 
+        //initialize text view for address of the location
         TextView locationAddress = listView.findViewById(R.id.address);
         locationAddress.setText(currentItem.getAddress());
 
+        //initialize text view for phone number of the location
         TextView locationPhoneNumber = listView.findViewById(R.id.phone);
         locationPhoneNumber.setText(currentItem.getPhoneNumber());
 
