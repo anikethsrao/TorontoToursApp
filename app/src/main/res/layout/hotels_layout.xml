@@ -13,6 +13,9 @@
             android:id="@+id/image"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
             tools:srcCompat="@tools:sample/avatars" />
 
@@ -53,10 +56,11 @@
 
         <TextView
             android:id="@+id/rating"
+            style="@style/location_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/website"
-            android:layout_toRightOf="@id/image"
+            android:layout_alignParentRight="true"
             android:text="@string/hello_blank_fragment" />
     </RelativeLayout>
 

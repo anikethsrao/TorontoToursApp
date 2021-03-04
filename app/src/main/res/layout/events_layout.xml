@@ -14,6 +14,9 @@
             tools:srcCompat="@tools:sample/avatars"
             android:layout_width="200dp"
             android:layout_height="100dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:scaleType="centerCrop" />
 
         <TextView
@@ -55,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/dates"
             android:layout_toRightOf="@id/image"
+            style="@style/location_rating"
             android:text="@string/hello_blank_fragment" />
 
         <TextView

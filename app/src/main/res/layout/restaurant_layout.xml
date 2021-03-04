@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/name"
             android:layout_alignLeft="@id/name"
-            android:autoLink="map"
             tools:text="Location address" />
 
         <TextView
@@ -43,7 +42,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/address"
             android:layout_alignLeft="@id/name"
-            android:autoLink="phone"
             tools:text="905.000.0000" />
     </RelativeLayout>
 
