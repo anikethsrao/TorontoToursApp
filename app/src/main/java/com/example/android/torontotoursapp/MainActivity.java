@@ -28,10 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPager2 viewPager = findViewById(R.id.pager);
         viewPager.setAdapter(new ScreenSlideAdapter(getSupportFragmentManager(), getLifecycle()));
 
-        // Instantiate TabLayout and link with ViewPager
-        // TabLayout tabs = findViewById(R.id.tabs);
-        // tabs.setupWithViewPager(viewPager);
-
+        // Instantiate and link to tabLayout to viewpager
         TabLayout tabLayout = findViewById(R.id.tabs);
         new TabLayoutMediator(tabLayout, viewPager, ((tab, position) -> tab.setText(tabTitles[position]))).attach();
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
