@@ -8,6 +8,10 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 
@@ -44,12 +48,15 @@ public class RestaurantFragment extends Fragment {
         restaurantList.add(new Toronto(R.drawable.canoe_restaurant, "GEORGE", "111C Queen St E, Toronto, ON M5C 1S2", "(416) 863-6006", 4.6));
         restaurantList.add(new Toronto(R.drawable.canoe_restaurant, "Ruby Watchco", "730 Queen St E, Toronto, ON M4M 1H2", "(416) 465-0100", 4.6));
 
-        //initialize view adapter
+        // Initialize view adapter
         RestaurantAdapter adapterView = new RestaurantAdapter(getActivity(), restaurantList);
-        //initialize listView
         ListView restaurantListView = rootView.findViewById(R.id.restaurants_list_view);
-        //attach view adapter
         restaurantListView.setAdapter(adapterView);
+
+        // Attach tab layout to view pager
+        //ViewPager2 viewPager = rootView.findViewById(R.id.pager);
+        //TabLayout tabLayout = rootView.findViewById(R.id.tabs);
+        //new TabLayoutMediator(tabLayout, viewPager,(tab, position) -> tab.setText("Restaurant")).attach();
 
         return rootView;
 

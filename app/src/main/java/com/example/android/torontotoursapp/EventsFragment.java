@@ -2,12 +2,18 @@ package com.example.android.torontotoursapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 
@@ -36,18 +42,25 @@ public class EventsFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_events, container, false);
 
-        //create list of tourist attractions in toronto
+        // Create list of tourist attractions in toronto
         ArrayList<Toronto> eventsList = new ArrayList<>();
 
+        // Add objects to list
         eventsList.add(new Toronto(canoe_restaurant, "CN Tower", "290 Bremner Blvd, Toronto, ON M5V 3L9", "(416) 601-4707", "www.cntower.ca", "NO DATES AVAILABLE DUE TO LOCK DOWN", 4.6));
         eventsList.add(new Toronto(canoe_restaurant, "Royal Ontario Museum", "100 Queens Park, Toronto, ON M5S 2C6", "(416) 586-8000", "www.rom.on.ca", "NO DATES AVAILABLE DUE TO LOCK DOWN", 4.7));
         eventsList.add(new Toronto(canoe_restaurant, "Casa Loma", "1 Austin Terrace, Toronto, ON M5R 1X8", "(416) 923-1171", "www.casaloma.ca", "NO DATES AVAILABLE DUE TO LOCK DOWN", 4.5));
         eventsList.add(new Toronto(canoe_restaurant, "Ripley's Aquarium", "288 Bremner Blvd, Toronto, ON M5V 3L9", "(647) 351-3474", "www.ripleyaquariums.com", "NO DATES AVAILABLE DUE TO LOCK DOWN", 4.6));
         eventsList.add(new Toronto(canoe_restaurant, "Canada's Wonderland", "1 Canada's Wonderland Drive, Vaughan, ON L6A 1S6", "(905) 832-8131", "www.canadaswonderland.com", "NO DATES AVAILABLE DUE TO LOCK DOWN", 4.5));
 
+        // Attach fragment adapter
         EventsAdapter eventsAdapter = new EventsAdapter(getActivity(), eventsList);
         ListView eventsListView = rootView.findViewById(R.id.events_list_view);
         eventsListView.setAdapter(eventsAdapter);
+
+        // Attach tab layout to view pager
+        //ViewPager2 viewPager = rootView.findViewById(R.id.pager);
+        //TabLayout tabLayout = rootView.findViewById(R.id.tabs);
+        //new TabLayoutMediator(tabLayout, viewPager,(tab, position) -> tab.setText("Events")).attach();
 
         return rootView;
     }

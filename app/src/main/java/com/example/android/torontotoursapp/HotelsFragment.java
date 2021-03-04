@@ -3,11 +3,15 @@ package com.example.android.torontotoursapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 
@@ -45,6 +49,11 @@ public class HotelsFragment extends Fragment {
         HotelsAdapter hotelsAdapter = new HotelsAdapter(getActivity(), hotelsList);
         ListView hotelsListView = rootView.findViewById(R.id.hotels_list_view);
         hotelsListView.setAdapter(hotelsAdapter);
+
+        // Attach tab layout to view pager
+        //ViewPager2 viewPager = rootView.findViewById(R.id.pager);
+        //TabLayout tabLayout = rootView.findViewById(R.id.tabs);
+        //new TabLayoutMediator(tabLayout, viewPager,(tab, position) -> tab.setText("Hotels")).attach();
 
         return rootView;
     }
