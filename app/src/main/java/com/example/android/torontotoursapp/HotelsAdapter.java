@@ -13,9 +13,9 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class EventsAdapter extends ArrayAdapter<Toronto> {
+public class HotelsAdapter extends ArrayAdapter<Toronto> {
 
-    public EventsAdapter(@NonNull Context context, @NonNull List<Toronto> objects) {
+    public HotelsAdapter(@NonNull Context context, @NonNull List<Toronto> objects) {
         super(context, 0, objects);
     }
 
@@ -31,7 +31,7 @@ public class EventsAdapter extends ArrayAdapter<Toronto> {
         View listView = convertView;
         // Check if its pre inflated
         if (listView == null) {
-            listView = LayoutInflater.from(getContext()).inflate(R.layout.events_layout, parent, false);
+            listView = LayoutInflater.from(getContext()).inflate(R.layout.hotels_layout, parent, false);
         }
 
         // Find the current position
@@ -56,10 +56,6 @@ public class EventsAdapter extends ArrayAdapter<Toronto> {
         // initialize text view for rating
         TextView ratingTextView = listView.findViewById(R.id.rating);
         ratingTextView.setText("" + currentItem.getRating());
-
-        // initialize text view for rating
-        TextView datesTextView = listView.findViewById(R.id.dates);
-        datesTextView.setText(currentItem.getDates());
 
         // initialize text view for website linking
         TextView websiteTextView = listView.findViewById(R.id.website);

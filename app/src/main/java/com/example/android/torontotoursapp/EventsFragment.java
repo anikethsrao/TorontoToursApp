@@ -45,9 +45,9 @@ public class EventsFragment extends Fragment {
         eventsList.add(new Toronto(canoe_restaurant, "Ripley's Aquarium", "288 Bremner Blvd, Toronto, ON M5V 3L9", "(647) 351-3474", "www.ripleyaquariums.com", "NO DATES AVAILABLE DUE TO LOCK DOWN", 4.6));
         eventsList.add(new Toronto(canoe_restaurant, "Canada's Wonderland", "1 Canada's Wonderland Drive, Vaughan, ON L6A 1S6", "(905) 832-8131", "www.canadaswonderland.com", "NO DATES AVAILABLE DUE TO LOCK DOWN", 4.5));
 
-        EventsAdapter tourismAdapter = new EventsAdapter(getActivity(), eventsList);
-        ListView tourismListView = rootView.findViewById(R.id.events_list_view);
-        tourismListView.setAdapter(tourismAdapter);
+        EventsAdapter eventsAdapter = new EventsAdapter(getActivity(), eventsList);
+        ListView eventsListView = rootView.findViewById(R.id.events_list_view);
+        eventsListView.setAdapter(eventsAdapter);
 
         return rootView;
     }

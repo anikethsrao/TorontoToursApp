@@ -14,7 +14,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
  */
 public class ScreenSlideAdapter extends FragmentStateAdapter {
 
-    int COUNT = 3;
+    int COUNT = 4;
 
     public ScreenSlideAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
@@ -27,8 +27,10 @@ public class ScreenSlideAdapter extends FragmentStateAdapter {
             return new RestaurantFragment();
         } else if (position == 1){
             return new TourismFragment();
-        } else { //if (position == 2) {
+        } else if (position == 2) {
             return new EventsFragment();
+        } else {
+            return new HotelsFragment();
         }
     }
 
