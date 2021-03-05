@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,9 +17,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
-
-    private String[] tabTitles = {"Restaurants", "Tourism", "Events", "Hotels"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -27,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         // Instantiate View Pager
         ViewPager2 viewPager = findViewById(R.id.pager);
         viewPager.setAdapter(new ScreenSlideAdapter(getSupportFragmentManager(), getLifecycle()));
+
+        Resources res = getResources();
+        String[] tabTitles = res.getStringArray(R.array.tab_titles);
 
         // Instantiate and link to tabLayout to viewpager
         TabLayout tabLayout = findViewById(R.id.tabs);

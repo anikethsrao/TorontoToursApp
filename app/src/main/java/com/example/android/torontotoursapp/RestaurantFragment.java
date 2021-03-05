@@ -1,5 +1,6 @@
 package com.example.android.torontotoursapp;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +9,6 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
-
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 
@@ -40,23 +37,24 @@ public class RestaurantFragment extends Fragment {
         //create list of restaurants in toronto
         ArrayList<Toronto> restaurantList = new ArrayList<>();
 
+        int[] imageId = {R.drawable.canoe_restaurant, R.drawable.scaramouche_restaurant, R.drawable.opus_restaurant,
+            R.drawable.barberians_restaurant, R.drawable.george_restaurant, R.drawable.ruby_watchco_restaurant};
+        double[] ratings = {4.5, 4.7, 4.5, 4.5, 4.6, 4.6};
+
+        Resources res = getResources();
+        String[] names = res.getStringArray(R.array.restaurant_names);
+        String[] address = res.getStringArray(R.array.restaurant_address);
+        String[] phones = res.getStringArray(R.array.restaurant_phone_numbers);
+
         //add restaurants to restaurant list
-        restaurantList.add(new Toronto(R.drawable.canoe_restaurant, "canoe", "66 Wellington St W 54th floor, Toronto, ON M5K 1H6", "(416) 364-0054", 4.5));
-        restaurantList.add(new Toronto(R.drawable.scaramouche_restaurant, "Scaramouche", "1 Benvenuto Pl, Toronto, ON M4V 2L1", " (416) 961-8011", 4.7));
-        restaurantList.add(new Toronto(R.drawable.opus_restaurant, "Opus", "37 Prince Arthur Ave, Toronto, ON M5R 1B2", "(416) 921-3105", 4.5));
-        restaurantList.add(new Toronto(R.drawable.barberians_restaurant, "Barberian's Steak House", "7 Elm St, Toronto, ON M5G 1H1", "(416) 597-0335", 4.5));
-        restaurantList.add(new Toronto(R.drawable.george_restaurant, "GEORGE", "111C Queen St E, Toronto, ON M5C 1S2", "(416) 863-6006", 4.6));
-        restaurantList.add(new Toronto(R.drawable.ruby_watchco_restaurant, "Ruby Watchco", "730 Queen St E, Toronto, ON M4M 1H2", "(416) 465-0100", 4.6));
+        for(int i = 0; i < imageId.length; i++){
+            restaurantList.add(new Toronto(imageId[i], names[i], address[i], phones[i], ratings[i]));
+        }
 
         // Initialize view adapter
         RestaurantAdapter adapterView = new RestaurantAdapter(getActivity(), restaurantList);
         ListView restaurantListView = rootView.findViewById(R.id.restaurants_list_view);
         restaurantListView.setAdapter(adapterView);
-
-        // Attach tab layout to view pager
-        //ViewPager2 viewPager = rootView.findViewById(R.id.pager);
-        //TabLayout tabLayout = rootView.findViewById(R.id.tabs);
-        //new TabLayoutMediator(tabLayout, viewPager,(tab, position) -> tab.setText("Restaurant")).attach();
 
         return rootView;
 

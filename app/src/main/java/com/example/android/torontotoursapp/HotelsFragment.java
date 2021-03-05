@@ -1,5 +1,6 @@
 package com.example.android.torontotoursapp;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -40,20 +41,23 @@ public class HotelsFragment extends Fragment {
         // create list of tourist attractions in toronto
         ArrayList<Toronto> hotelsList = new ArrayList<>();
 
-        hotelsList.add(new Toronto(fairmont_hotels, "Fairmont Royal York", "100 Front St W, Toronto, ON M5J 1E3", "(416) 601-4707", "www.fairmont.com/royal-york-toronto", 5));
-        hotelsList.add(new Toronto(omni_king_edward_hotels, "The Omni King Edward Hotel", "37 King St E, Toronto, ON M5C 1E9", "(416) 601-4707", "www.omnihotels.com/hotels/toronto-king-edward", 5));
-        hotelsList.add(new Toronto(hilton_toronto, "Hilton Toronto", "145 Richmond St W, Toronto, ON M5H 2L2", "(416) 601-4707", "www.hilton.com/en/hotels/torhihh-hilton-toronto", 5));
-        hotelsList.add(new Toronto(westin_harbor_hotels, "The Westin Harbour Castle, Toronto", "1 Harbour Square, Toronto, ON M5J 1A6", "(416) 601-4707", "www.marriott.com/hotels/travel/yyzwi-the-westin-harbour-castle-toronto", 5));
-        hotelsList.add(new Toronto(inter_continental_hotels, "InterContinental Toronto Centre", "225 Front St W, Toronto, ON M5V 2X3", "(416) 601-4707", "www.fairmont.com/royal-york-toronto/", 5));
+        int[] imageId = {fairmont_hotels, omni_king_edward_hotels, hilton_toronto, westin_harbor_hotels, inter_continental_hotels};
+        double[] ratings = {5, 5, 5, 5, 5};
+
+        Resources res = getResources();
+        String[] names = res.getStringArray(R.array.hotel_names);
+        String[] address = res.getStringArray(R.array.hotel_address);
+        String[] phones = res.getStringArray(R.array.hotel_phone_numbers);
+        String[] websites = res.getStringArray(R.array.hotel_website);
+
+        //add restaurants to restaurant list
+        for(int i = 0; i < imageId.length; i++){
+            hotelsList.add(new Toronto(imageId[i], names[i], address[i], phones[i], websites[i], ratings[i]));
+        }
 
         HotelsAdapter hotelsAdapter = new HotelsAdapter(getActivity(), hotelsList);
         ListView hotelsListView = rootView.findViewById(R.id.hotels_list_view);
         hotelsListView.setAdapter(hotelsAdapter);
-
-        // Attach tab layout to view pager
-        //ViewPager2 viewPager = rootView.findViewById(R.id.pager);
-        //TabLayout tabLayout = rootView.findViewById(R.id.tabs);
-        //new TabLayoutMediator(tabLayout, viewPager,(tab, position) -> tab.setText("Hotels")).attach();
 
         return rootView;
     }

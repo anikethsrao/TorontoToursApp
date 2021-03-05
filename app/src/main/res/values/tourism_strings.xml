@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tourism_names">
+        <item>CN Tower</item>
+        <item>Royal Ontario Museum</item>
+        <item>Casa Loma</item>
+        <item>Ripley\'s Aquarium</item>
+        <item>Canada\'s Wonderland</item>
+    </string-array>
+
+    <string-array name="tourism_address">
+        <item>290 Bremner Blvd, Toronto, ON M5V 3L9</item>
+        <item>1 Benvenuto Pl, Toronto, ON M4V 2L1</item>
+        <item>37 Prince Arthur Ave, Toronto, ON M5R 1B2</item>
+        <item>7 Elm St, Toronto, ON M5G 1H1</item>
+        <item>111C Queen St E, Toronto, ON M5C 1S2</item>
+        <item>730 Queen St E, Toronto, ON M4M 1H2</item>
+    </string-array>
+
+    <string-array name="tourism_phone_numbers">
+        <item>(416) 364-0054</item>
+        <item>(416) 961-8011</item>
+        <item>(416) 921-3105</item>
+        <item>(416) 597-0335</item>
+        <item>(416) 863-6006</item>
+        <item>(416) 465-0100</item>
+    </string-array>
+
+    <string-array name="tourism_website">
+        <item>www.cntower.ca</item>
+        <item>www.rom.on.ca</item>
+        <item>www.casaloma.ca</item>
+        <item>www.ripleyaquariums.com</item>
+        <item>www.canadaswonderland.com</item>
+    </string-array>
+
+</resources>

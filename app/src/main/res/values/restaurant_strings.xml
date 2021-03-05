@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="restaurant_names">
+        <item>Canoe</item>
+        <item>Scaramouche</item>
+        <item>Opus</item>
+        <item>Barberian\'s Steak House</item>
+        <item>GEORGE</item>
+        <item>Ruby Watchco</item>
+    </string-array>
+
+    <string-array name="restaurant_address">
+        <item>66 Wellington St W 54th floor, Toronto, ON M5K 1H6</item>
+        <item>1 Benvenuto Pl, Toronto, ON M4V 2L1</item>
+        <item>37 Prince Arthur Ave, Toronto, ON M5R 1B2</item>
+        <item>7 Elm St, Toronto, ON M5G 1H1</item>
+        <item>111C Queen St E, Toronto, ON M5C 1S2</item>
+        <item>730 Queen St E, Toronto, ON M4M 1H2</item>
+    </string-array>
+
+    <string-array name="restaurant_phone_numbers">
+        <item>(416) 364-0054</item>
+        <item>(416) 961-8011</item>
+        <item>(416) 921-3105</item>
+        <item>(416) 597-0335</item>
+        <item>(416) 863-6006</item>
+        <item>(416) 465-0100</item>
+    </string-array>
+
+</resources>

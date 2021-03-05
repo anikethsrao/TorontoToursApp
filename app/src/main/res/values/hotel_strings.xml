@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="hotel_names">
+        <item>Fairmont Royal York</item>
+        <item>The Omni King Edward Hotel</item>
+        <item>Hilton Toronto</item>
+        <item>The Westin Harbour Castle</item>
+        <item>InterContinental Toronto Centre</item>
+    </string-array>
+
+    <string-array name="hotel_address">
+        <item>100 Front St W, Toronto, ON M5J 1E3</item>
+        <item>37 King St E, Toronto, ON M5C 1E9</item>
+        <item>145 Richmond St W, Toronto, ON M5H 2L2</item>
+        <item>1 Harbour Square, Toronto, ON M5J 1A6</item>
+        <item>225 Front St W, Toronto, ON M5V 2X3</item>
+    </string-array>
+
+    <string-array name="hotel_phone_numbers">
+        <item>(416) 601-4707</item>
+        <item>(416) 601-4707</item>
+        <item>(416) 921-3105</item>
+        <item>(416) 597-0335</item>
+        <item>(416) 863-6006</item>
+        <item>(416) 465-0100</item>
+    </string-array>
+
+    <string-array name="hotel_website">
+        <item>www.fairmont.com/royal-york-toronto</item>
+        <item>www.omnihotels.com/hotels/toronto-king-edward</item>
+        <item>www.hilton.com/en/hotels/torhihh-hilton-toronto</item>
+        <item>www.marriott.com/hotels/travel/yyzwi-the-westin-harbour-castle-toronto</item>
+        <item>www.fairmont.com/royal-york-toronto</item>
+    </string-array>
+
+
+</resources>
